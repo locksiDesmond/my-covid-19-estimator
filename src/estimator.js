@@ -34,8 +34,8 @@ const findInfectionsByRequestedTime = (object, data) => {
   // infectionsByRequested is solved here
   object.infectionsByRequestedTime = iBRT;
   // severeCasesByRequested Time is solved here
-  object.severeCaseByRequestedTime = iBRT * 0.15;
-  const hBBRT = 0.35 * totalHospitalBeds - object.severeCaseByRequestedTime;
+  object.severeCasesByRequestedTime = iBRT * 0.15;
+  const hBBRT = 0.35 * totalHospitalBeds - object.severeCasesByRequestedTime;
   // hospitalBedsByRequestedTime is solved here
   object.hospitalBedsByRequestedTime = hBBRT;
   const cFICUBRT = 0.05 * iBRT;
