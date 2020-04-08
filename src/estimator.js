@@ -29,7 +29,8 @@ const findInfectionsByRequestedTime = (object, data) => {
     default:
       throw new Error('period type undefined');
   }
-  const iBRT = object.currentlyInfected * 2 ** Math.floor(numberOfDays / 3);
+  const factor = Math.floor(numberOfDays / 3);
+  const iBRT = object.currentlyInfected * Math.Pow(2, factor);
   // infectionsByRequested is solved here
   object.infectionsByRequestedTime = iBRT;
   // severeCasesByRequested Time is solved here
@@ -55,7 +56,7 @@ const completeEstimator = (data) => {
   return {
     data,
     impact,
-    severe
+    severeImpact: severe
   };
 };
 const covid19ImpactEstimator = (data) => completeEstimator(data);
