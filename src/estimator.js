@@ -47,7 +47,7 @@ const findInfectionsByRequestedTime = (object, data) => {
   const { region } = data;
   const { avgDailyIncomeInUSD, avgDailyIncomePopulation } = region;
   const dIF = avgDailyIncomeInUSD * avgDailyIncomePopulation * iBRT;
-  object.dollarsInFlight = dIF;
+  object.dollarsInFlight = dIF * numberOfDays;
 };
 const completeEstimator = (data) => {
   const { impact, severe } = currentlyInfected(data);
