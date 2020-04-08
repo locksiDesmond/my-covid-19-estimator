@@ -30,7 +30,7 @@ const findInfectionsByRequestedTime = (object, data) => {
       throw new Error('period type undefined');
   }
   const factor = Math.floor(numberOfDays / 3);
-  const iBRT = object.currentlyInfected * Math.Pow(2, factor);
+  const iBRT = object.currentlyInfected * 2 ** factor;
   // infectionsByRequested is solved here
   object.infectionsByRequestedTime = iBRT;
   // severeCasesByRequested Time is solved here
