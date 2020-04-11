@@ -32,17 +32,17 @@ const findInfectionsByRequestedTime = (object, data) => {
   const factor = Math.floor(numberOfDays / 3);
   const iBRT = object.currentlyInfected * 2 ** factor;
   // infectionsByRequested is solved here
-  object.infectionsByRequestedTime = iBRT;
+  object.infectionsByRequestedTime = Math.trunc(iBRT);
   // severeCasesByRequested Time is solved here
-  object.severeCasesByRequestedTime = iBRT * 0.15;
+  object.severeCasesByRequestedTime = Math.trunc(iBRT * 0.15);
   const hBBRT = 0.35 * totalHospitalBeds - object.severeCasesByRequestedTime;
   // hospitalBedsByRequestedTime is solved here
-  object.hospitalBedsByRequestedTime = hBBRT;
+  object.hospitalBedsByRequestedTime = Math.trunc(hBBRT);
   const cFICUBRT = 0.05 * iBRT;
   // cases For ICU BY RequestedTime is solved here;
-  object.casesForICUByRequestedTime = cFICUBRT;
+  object.casesForICUByRequestedTime = Math.trunc(cFICUBRT);
   const cFVBRT = iBRT * 0.02;
-  object.casesForVentilatorsByRequestedTime = cFVBRT;
+  object.casesForVentilatorsByRequestedTime = Math.trunc(cFVBRT);
   // challenge 3
   const { region } = data;
   const { avgDailyIncomeInUSD, avgDailyIncomePopulation } = region;
