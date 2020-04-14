@@ -3,7 +3,7 @@ const currentlyInfected = (data) => {
   const { reportedCases } = Inputdata;
   const impactCurrentlyInfected = reportedCases * 10;
   const severeCurrentlyInfected = reportedCases * 50;
-
+  // Locksi
   return {
     impact: {
       currentlyInfected: impactCurrentlyInfected
